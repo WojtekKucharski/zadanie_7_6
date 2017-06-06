@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Quicksand')
+
+=grid($prefix)
+	@for $i from 1 through $columns
+		.#{$prefix}-#{$i}
+			width: 100% / $columns * $i
+			
+$columns: 12
+			
+.clearfix 
+	&:before, 
+	&:after
+		content: " "
+		display: table
+		clear: both
+
+*
+	box-sizing: border-box
+
+$color-gray: #313234
+
+$color-social-icons:  #064B99
+
+$color-button-film: #10B516
+
+$color-button-camera: #048FD4
+
+$color-button-newspaper: #E39105
+
+body 
+	margin: 0
+	font-family: Quicksand
+
+[class*="col-"]
+	float: left
+	min-height: 1px
+	position: relative
+	padding: 0px 10px
+
+.container 
+	margin: 0 auto
+	max-width: 1200px
+
+
+section.container 
+	margin: 50px auto
+
+
+.row
+	@extend .clearfix
+
+
+header 
+	background-color: $color-gray
+	min-height: 50px
+
+	nav 
+		ul 
+			padding: 0
+			margin: 0
+			list-style-type: none
+			float: right
+	
+		li 
+			display: inline-block
+			float: right
+	
+		a 
+			color: white
+			width: 100px
+			text-align: center
+			text-decoration: none
+			padding: 0 20px
+			line-height: 50px
+			display: block
+			transition: 0.5s
+			&:hover 
+				background: lighten( $color-gray, 35% )
+				color: black
+				display: block
+	
+		img 
+			padding-top: 10px
+
+
+.hero 
+	height: 350px
+	background: src(../img/pexels-photo-25629.jpg) center/cover
+
+	.slogan 
+		width: 600px
+		margin-top: 125px
+		background-color: rgba(0, 0, 0, 0.5)
+		float: right
+		text-align: center
+		height: 100px
+		line-height: 100px
+	
+		h1 
+			font-family: Francois One
+			color: white
+			margin: 0
+
+
+.buttons 
+	text-align: center
+
+	i 
+		width: 80px
+		height: 80px
+		line-height: 80px
+		border-radius: 15px
+		cursor: pointer
+		transition: 0.5s
+		&:hover 
+			color: white
+			transform: scale(1.10)
+
+
+	p 
+		padding: 0 25px
+		color: gray
+
+	h1 
+		text-transform: uppercase
+		color: #0B4B80
+
+	.fa-film 
+		background-color: $color-button-film
+	
+	.fa-camera-retro 
+		background-color: $color-button-camera
+	
+	.fa-newspaper-o 
+		background-color: $color-button-newspaper
+	
+	.fa-film:hover 
+		background-color: darken( $color-button-film, 15%)
+	
+	.fa-camera-retro:hover 
+		background-color: darken( $color-button-camera, 15%)
+	
+	.fa-newspaper-o:hover 
+		background-color: darken( $color-button-newspaper, 15%)
+
+
+.welcome 
+	text-align: center
+
+	h1
+		text-transform: uppercase
+
+
+.gallery img 
+	width: 100%
+	height: 25vw
+	display: block
+	object-fit: cover
+
+
+.gallery .row > div 
+	padding: 0
+
+
+.gallery .layer 
+	position: absolute
+	width: 100%
+	height: 100%
+	transition: 0.5s
+	text-align: center
+	line-height: 25vw
+
+
+.gallery .layer .fa 
+	visibility: hidden
+	color: black
+	width: 30px
+	height: 30px
+	padding: 5px
+	font-size: 20px
+	background-color: #fff
+	border-radius: 5px
+	margin: 5px
+
+
+.gallery .layer:hover i.fa 
+	visibility: visible
+	cursor: pointer
+
+
+.gallery .layer:hover 
+	background-color: rgba(0, 0, 0, 0.5)
+
+
+.staff [class*="layer-"] 
+	width: 18vw
+	height: 18vw
+	border-radius: 50%
+	border: 0
+	margin: 40px auto
+	background-size: cover
+	background-position: center
+	display: inline-block
+
+
+.layer-1 
+	background-image: url("https://images.pexels.com/photos/175977/pexels-photo-175977.jpeg?h=350&auto=compress&cs=tinysrgb")
+
+
+.layer-2 
+	background-image: url("https://images.pexels.com/photos/25658/pexels-photo.jpg?h=350&auto=compress&cs=tinysrgb")
+
+
+.layer-3 
+	background-image: url("https://images.pexels.com/photos/121442/pexels-photo-121442.jpeg?h=350&auto=compress&cs=tinysrgb")
+
+
+.layer-4 
+	background-image: url("https://images.pexels.com/photos/61124/pexels-photo-61124.jpeg?h=350&auto=compress&cs=tinysrgb")
+
+
+.staff 
+	padding: 3px
+	text-align: center
+	font-size: 15px
+
+	.cover 
+		position: absolute
+		display: inline-block
+		width: 18vw
+		height: 18vw
+		border-radius: 50%
+		border: 0
+		margin: 40px auto
+		transition: 0.5s
+		&:hover 
+			background-color: rgba(0, 0, 0, 0.5)
+			p 
+				visibility: visible
+		p 
+			visibility: hidden
+			color: white
+			line-height: 18vw
+
+.awesome 
+	color: white
+	min-height: 150px
+	background-color: lighten( $color-gray, 35% )
+
+	p 
+		text-align: justify
+
+	h1 
+		font-weight: bold
+		text-transform: uppercase
+		font-size: 25px
+
+	img 
+		display: block
+		margin: 40px auto
+		width: 120px
+
+
+.numbers 
+	text-align: center
+	padding: 0px 10px
+	text-transform: uppercase
+	margin: 0
+
+	h1 
+		font-family: Francois One
+		font-size: 40px
+		font-weight: bold
+
+	h3 
+		color: #0ABAF5
+
+
+footer 
+	background-color: $color-gray
+	color: white
+	padding: 30px
+
+	.social-icons i 
+		margin-right: 10px
+	
+	h1 
+		text-transform: uppercase
+		font-size: 25px
+		font-weight: bold
+		display: inline-block
+	
+	h1:after 
+		content: ""
+		display: inline-block
+		height: 2px
+		width: 60px
+		background-color: white
+		margin-left: 10px
+		margin-bottom: 8px
+	
+	p 
+		margin-top: 0
+	
+	h2 
+		font-size: 15px
+		text-transform: uppercase
+		margin-top: 0
+		margin-bottom: 34px
+	
+	.fa 
+		font-size: 25px
+		background-color: $color-social-icons
+		text-align: center
+		color: white
+		height: 45px
+		width: 45px
+		line-height: 45px
+		cursor: pointer
+		transition: 0.5s
+		&:hover 
+			background-color: lighten($color-social-icons, 35%)
+
+
+.signature h4 
+	background-color: black
+	color: white
+	text-align: center
+	padding: 7px
+	margin: 0
+			
++grid('col')
+
+@media (min-width: 768px) and (max-width: 900px)
+
+	+grid('col-m')
+
+	.gallery .layer 
+		visibility: hidden
+		line-height: 50vw
+	
+		
+	.gallery .layer .fa 
+		visibility: visible
+		width: 9vw
+		height: 9vw
+		padding: 1.5vw
+		font-size: 6vw
+		border-radius: 1vw
+		margin: 1vw
+	
+	
+	.gallery img, .gallery .layer 
+		height: 50vw
+	
+	
+	.staff [class*="layer-"] 
+		width: 35vw
+		height: 35vw
+    
+    
+	.staff .cover 
+		visibility: hidden
+		width: 35vw
+		height: 35vw
+		margin-top: 32vw
+	
+    
+	.staff .cover > p 
+		visibility: visible
+		color: gray
+		line-height: 20vw
+	
+	
+	footer	
+		text-align: center
+	
+		h2 
+			margin-bottom: 10px
+	
+		h1:after 
+			width: 25px
+	    
+		h1:before 
+			content: ""
+			display: inline-block
+			height: 2px
+			width: 25px
+			background-color: white
+			margin-right: 10px
+			margin-bottom: 8px
+		
+		
+@media (max-width: 767px)
+
+	+grid('col-s')
+   
+	header > nav ul 
+		padding: 10%
+		float: none
+   	
+   	
+	header > nav ul > li 
+		display: block
+		width: 100%
+    
+   
+	header > nav ul > li a 
+		width: 100%
+		height: 60px
+		background-color: lighten( $color-gray, 35% )
+		margin-bottom: 10px
+    
+    
+	header > nav > img 
+		padding: 10%
+		width: 100%
+	
+	
+	.hero .slogan 
+		width: 100%
+	
+	
+	.buttons i:hover 
+		color: black
+		transform: scale(1.0)
+	
+	
+	.buttons .fa-film:hover 
+		background-color: #10B516
+	
+	
+	.buttons .fa-camera-retro:hover 
+		background-color: #048FD4
+	
+
+	.buttons .fa-newspaper-o:hover 
+		background-color: #E39105
+	
+	
+	.gallery img, .gallery .layer 
+		height: 100vw
+	
+	.gallery .layer 
+		visibility: hidden
+		line-height: 100vw
+	
+		
+	.gallery .layer .fa 
+		visibility: visible
+		width: 18vw
+		height: 18vw
+		padding: 3vw
+		font-size: 12vw
+		border-radius: 2vw
+		margin: 1vw
+	
+	
+	.staff [class*="layer-"] 
+		width: 60vw
+		height: 60vw
+    
+	.staff .cover 
+		position: absolute
+		visibility: hidden
+		width: 60vw
+		height: 60vw
+	
+	.staff .cover > p 
+		visibility: visible
+		color: gray
+		line-height: 125vw
+	
+	.awesome h1 
+		text-align: center
+	
+	footer 
+		text-align: center
+	
+		h1:after 
+			width: 25px
+    
+		h1:before 
+			content: ""
+			display: inline-block
+			height: 2px
+			width: 25px
+			background-color: white
+			margin-right: 10px
+			margin-bottom: 8px
+			
+		h2 
+			margin-bottom: 10px
